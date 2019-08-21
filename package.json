@@ -1,0 +1,37 @@
+{
+  "name": "resource-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "dotenv": "^8.0.0",
+    "jest": "^24.8.0",
+    "jest-junit": "^7.0.0",
+    "jest-trx-results-processor": "^0.1.0",
+    "mkdirp": "^0.5.1",
+    "serverless": "^1.49.0",
+    "supertest": "^4.0.2",
+    "testdouble": "^3.12.3",
+    "testdouble-jest": "^2.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.507.0",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "test:unit": "jest --config test/unit/unit.config.js --coverage",
+    "test:integration": "jest --config test/integration/integration.config.js",
+    "test": "npm run test:unit && npm run test:integration"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "jest-junit": {
+    "suiteName": "resource api test suite",
+    "outputDirectory": "./.test/unit",
+    "outputName": "./result.xml"
+  }
+}
