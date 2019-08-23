@@ -14,7 +14,7 @@ function runIntegrationSuite() {
     AWS_SECRET_ACCESS_KEY: argv.awsSecretKey
   }
   const env = Object.assign({}, process.env, awsVars)
-  const jestArgs = ['--config', 'test/integration/jest.integration.config.js']
+  const jestArgs = ['--config', 'test/integration/integration.config.js']
   return spawn('./node_modules/.bin/jest', jestArgs, {
     cwd: undefined,
     env

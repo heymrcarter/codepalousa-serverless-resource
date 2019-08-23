@@ -3,5 +3,6 @@ const path = require('path')
 module.exports = {
   rootDir: path.resolve(__dirname),
   moduleFileExtensions: ['js', 'json'],
-  setupFiles: ['<rootDir>/env-setup.js']
+  setupFiles: ['<rootDir>/env-setup.js'],
+  reporters: ['default', 'jest-junit']
 }
