@@ -6,15 +6,24 @@ AWS.config.update({ region: 'us-east-1' })
 const databaseProvider = require('../../src/database-provider')
 const db = databaseProvider.getInstance()
 
-const deleteQuery = {
-  TableName: 'codepalousa-resource',
-  Key: {
-    id: 'clan-id'
+async function restore() {
+  const scanQuery = {
+    TableName: 'codepalousa-resources-test'
   }
+
+  const result = await db.scan(scanQuery).promise()
+  for (let item of result.Items) {
+    const deleteQuery = {
+      TableName: 'codepalousa-resources-test',
+      Key: {
+        id: item.id
+      }
+    }
+
+    await db.delete(deleteQuery).promise()
+  }
+
+  console.log('test environment restored')
 }
 
-db.delete(deleteQuery)
-  .promise()
-  .then(() => {
-    console.log('test environment restored')
-  })
+restore()
