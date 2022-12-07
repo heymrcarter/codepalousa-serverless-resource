@@ -12,7 +12,7 @@
     "jest-junit": "^7.0.0",
     "jest-trx-results-processor": "^0.1.0",
     "mkdirp": "^0.5.1",
-    "serverless": "^1.49.0",
+    "serverless": "^3.25.1",
     "supertest": "^4.0.2",
     "testdouble": "^3.12.3",
     "testdouble-jest": "^2.0.0"
